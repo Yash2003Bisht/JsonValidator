@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "home phone": {
+      "type": "number"
+    },
+    "cell phone": {
+      "type": "number"
+    },
+    "work phone": {
+      "type": "number"
+    },
+    "birth date": {
+      "type": "number",
+      "minimum": 18,
+      "exclusiveMaximum": 100
+    },
+    "govt id ": {
+      "type": "number"
+    },
+    "day": {
+      "type": "string",
+      "enum": [
+        "SU",
+        "MO",
+        "TU",
+        "WE",
+        "TH",
+        "FR",
+        "SA"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "home phone"
+      ]
+    },
+    {
+      "required": [
+        "cell phone"
+      ]
+    },
+    {
+      "required": [
+        "work phone"
+      ]
+    }
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "birth date"
+      ]
+    },
+    {
+      "required": [
+        "govt id"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}
