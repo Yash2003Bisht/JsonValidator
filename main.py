@@ -5,6 +5,7 @@ from os.path import exists
 from typing import Union
 
 
+
 class JsonValidator:
 
     def main(
